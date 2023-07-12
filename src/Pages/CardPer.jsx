@@ -1,13 +1,13 @@
 import React from 'react'
 import { Box, Button, ButtonGroup, Card, CardBody, CardFooter, Divider, Heading, Image, Stack, Text } from '@chakra-ui/react'
-
+import Img3 from "../Photos/3.jpeg"
 const CardPer = () => {
     return (
         <Card maxW='40vh'>
             <CardBody >
                 <Box m={'auto'} justifyContent={'center'}>
                     <Image
-                        src='https://lh6.googleusercontent.com/ztuuLc9zGA0Bd2pkQUxHIpK6uwVFE-HdOkz0uOyY829T_sCPPzW64MDwl1ZKwdxbZSdToblJqxI_w4SbjzOKSL8eBoT1rr6NUPfw5HNqt8R6bXy0N2Tvn9DHYmIxNxwSCg=w1280'
+                        src={Img3}
                         alt='Green double couch with wooden legs'
                         borderRadius='lg'
                     />

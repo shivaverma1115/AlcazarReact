@@ -3,6 +3,7 @@ import React from 'react'
 import Video from './Video'
 import Card from './Card'
 import { useNavigate } from 'react-router-dom'
+import Img2 from "../Photos/2.jpg"
 
 const Home = () => {
   const navigate = useNavigate();
@@ -23,7 +24,7 @@ const Home = () => {
         </Box>
       </Box>
       <Box w={'fit-content'} m={'auto'} p={5} maxW={'100vh'} mt={5} mb={5}>
-        <Image src='https://lh5.googleusercontent.com/LABF3MDydS9YzyyWSIqG-ZKyKycfrqguOji-7dIz0RQbnk9T-s33wz-Jdqhu3_y2VndXu3erj9Ou7tjT2oFmz5feDcN9M3Qbpuiz7udM83kdkjPRcXFAgzK2xXjQlqZwOw=w1280' />
+        <Image src={Img2} />
       </Box>
       <Video />
       <Card />
