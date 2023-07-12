@@ -50,7 +50,7 @@ const Navbar = () => {
                 <Box m={'auto'} display={['flex', 'flex', 'none']} color={'white'} fontSize={40} onClick={handleHamber}>{hamber ? <GiHamburgerMenu /> : <GiSkullCrossedBones />}</Box>
             </Flex>
             {hamber ? "" : (
-                <Flex color={'white'} fontWeight={700} position={'fixed'}bg={'black'}top={'6vh'} w={'100%'}textAlign={'center'} fontSize={'20px'} cursor={'pointer'} display={['block', 'block', 'none']}>
+                <Flex color={'white'} fontWeight={700} position={'fixed'}bg={'black'}top={'7.5vh'} w={'100%'}textAlign={'center'} fontSize={'20px'} cursor={'pointer'} display={['block', 'block', 'none']}>
                     {
                         links.map((e, i) => {
                             return (
