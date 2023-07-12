@@ -7,7 +7,7 @@ const VideoPer = () => {
             <CardBody>
                 <Box m={'auto'} justifyContent={'center'}>
                     <Image
-                        src='https://i.ytimg.com/an_webp/q9J_J7MiJPI/mqdefault_6s.webp?du=3000&sqp=CIyCuqUG&rs=AOn4CLBi8Wz_-i6h4pXwXMBIJpwfdkFV5g'
+                        src='https://i.ytimg.com/an_webp/8Eo-HNq5MjE/mqdefault_6s.webp?du=3000&sqp=CNLHu6UG&rs=AOn4CLDMe2kvd5hydfgfNKmuJaD7SEgGiQ'
                         alt='Green double couch with wooden legs'
                         borderRadius='lg'
                     />

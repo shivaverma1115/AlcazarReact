@@ -4,7 +4,7 @@ import ADS from "../Photos/1.jpg"
 
 const Ads = () => {
   return (
-    <Box m={'auto'}w={'100%'}mt={5}>
+    <Box m={'auto'}w={'100%'}mt={20}>
       <Image src={ADS}/>
     </Box>
   )
