@@ -15,7 +15,9 @@ const Navbar = () => {
         { path: '/faq', title: "FAQ" },
     ]
     return (
-        <Flex position={'sticky'}top={0}w={'100%'} p={3} bg={'black'} color={'white'} justifyContent={'space-around'}>
+        <Flex
+         position={'fixed'}top={0}
+         w={'100%'} p={3} bg={'black'} color={'white'} justifyContent={'space-around'}>
             <Flex cursor={'pointer'} fontSize={'20px'} fontWeight={800}>
                 <Avatar mr={5} src='https://yt3.googleusercontent.com/ytc/AOPolaTeV1m4luShjHRCrzmEgy-6guc_rK1sUPn4TU5SHg=s176-c-k-c0x00ffffff-no-rj-mo' />
                 <Text m='auto'>Global Creations</Text>

@@ -1,6 +1,5 @@
 import { Box, Flex, Text } from '@chakra-ui/react'
 import React from 'react'
-import Footer from '../Componects/Footer'
 import { Link } from 'react-router-dom'
 
 const Contact = () => {
@@ -32,7 +31,6 @@ const Contact = () => {
           </Box>
         </Flex>
       </Box>
-      <Footer />
     </>
   )
 }

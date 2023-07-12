@@ -6,7 +6,7 @@ import { AiOutlineClockCircle } from 'react-icons/ai';
 
 const Footer = () => {
   return (
-    <Flex display={['block','block','flex']} bg={'black'}color={'white'} justifyContent={'space-around'}w={'100%'}>
+    <Flex p={5} display={['block','block','flex']} bg={'black'}color={'white'} justifyContent={'space-around'}w={'100%'}>
       <Box m={10}>
         <Text fontSize={'20px'}fontWeight={700}>Sign up for discounts</Text>
         <Text my={5}>Join our mailing list to get notified of sales and discounts</Text>
