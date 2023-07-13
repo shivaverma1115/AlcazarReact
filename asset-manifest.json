@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.js": "/AlcazarReact/static/js/main.3ddd8772.js",
+    "static/media/2.jpg": "/AlcazarReact/static/media/2.5218900b6c44527e110d.jpg",
+    "static/media/3.jpeg": "/AlcazarReact/static/media/3.30803935563017b33fa2.jpeg",
+    "static/media/1.jpg": "/AlcazarReact/static/media/1.6998132ec3ec4eaa3916.jpg",
+    "index.html": "/AlcazarReact/index.html",
+    "main.3ddd8772.js.map": "/AlcazarReact/static/js/main.3ddd8772.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.3ddd8772.js"
+  ]
+}
