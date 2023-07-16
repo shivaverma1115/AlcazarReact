@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Box } from '@chakra-ui/react';
 import Navbar from './Componects/Navbar';
 import AllRoutes from './Componects/AllRoutes';
@@ -8,10 +8,10 @@ import Footer from './Componects/Footer';
 function App() {
   return (
     <Box>
-      <Ads />
+      {/* <Ads /> */}
       <AllRoutes />
       <Navbar />
-      <Footer/>
+      {/* <Footer /> */}
     </Box>
   );
 }

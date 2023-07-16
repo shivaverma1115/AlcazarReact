@@ -1,10 +1,13 @@
 import { Box, Flex, Text } from '@chakra-ui/react'
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Ads from '../Componects/Ads'
+import Footer from '../Componects/Footer'
 
 const Contact = () => {
   return (
     <>
+    <Ads display={"block"} />
       <Box p={10}>
         <Flex m={'auto'} textAlign={'center'} display={['block', 'block', 'flex']}>
           <Flex justifyContent={'center'} m={'auto'} >
@@ -31,6 +34,7 @@ const Contact = () => {
           </Box>
         </Flex>
       </Box>
+      <Footer display={"block"} />
     </>
   )
 }

@@ -4,8 +4,9 @@ import { BsChat } from 'react-icons/bs';
 import { AiOutlineMail } from 'react-icons/ai';
 import { AiOutlineClockCircle } from 'react-icons/ai';
 
-const Footer = () => {
+const Footer = ({display}) => {
   return (
+    <Box display={display} >
     <Flex p={5} display={['block','block','flex']} bg={'black'}color={'white'} justifyContent={'space-around'}w={'100%'}>
       <Box m={10}>
         <Text fontSize={'20px'}fontWeight={700}>Sign up for discounts</Text>
@@ -37,6 +38,7 @@ const Footer = () => {
         </Flex>
       </Box>
     </Flex>
+    </Box>
   )
 }
 

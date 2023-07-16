@@ -1,30 +1,30 @@
-import React from 'react'
-import { Box, Button, ButtonGroup, Card, CardBody, CardFooter, Divider, Heading, Image, Stack, Text } from '@chakra-ui/react'
+import React, { useState } from 'react'
+import { Box, Button, ButtonGroup, Card, CardBody, CardFooter, Divider, Heading, Image, Skeleton, Stack, Text } from '@chakra-ui/react'
 
 const VideoPer = () => {
+    const [isLoaded, setIsLoaded] = useState(true)
     return (
+        <Skeleton height='52vh' isLoaded={isLoaded}borderRadius={10}>
         <Card maxW='40vh'>
             <CardBody>
                 <Box m={'auto'} justifyContent={'center'}>
                     <Image
-                        src='https://i.ytimg.com/an_webp/8Eo-HNq5MjE/mqdefault_6s.webp?du=3000&sqp=CNLHu6UG&rs=AOn4CLDMe2kvd5hydfgfNKmuJaD7SEgGiQ'
+                        src='https://i.ytimg.com/vi/uV762SHeUdI/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBXnWTHfrGN29fcLIuIF29jbrT1Ag'
                         alt='Green double couch with wooden legs'
                         borderRadius='lg'
                     />
                 </Box>
                 <Stack mt='6' spacing='3'>
-                    <Heading size='md'>शादी निमंत्रण वीडियो | GC067 |</Heading>
+                    <Heading size='md'>A Digital Indian Wedding Invitations Card|| GC003</Heading>
                     <Text>
-                        This is an invitation video for inviting our friends & relatives to WhatsApp.
-                        It's very simple to use, firstly you create a video like this and send your all friends & relatives...
-                        please Like, Share & Subscribe to our channel...
+                    Hello everyone, Welcome to our Channel Global Creations....This is a invitaion video for inviting our friends & relatives in whatsapp.It's very semple to use, firstly you create a video like this and send your all friends & relatives...
                     </Text>
-                    <Text color='blue.600' fontSize='2xl'>
+                    {/* <Text color='blue.600' fontSize='2xl'>
                         2000 ₹
-                    </Text>
+                    </Text> */}
                 </Stack>
             </CardBody>
-            <Divider />
+            {/* <Divider />
             <CardFooter>
                 <ButtonGroup spacing='2'>
                     <Button variant='solid' colorScheme='blue'>
@@ -34,8 +34,9 @@ const VideoPer = () => {
                         Add to cart
                     </Button>
                 </ButtonGroup>
-            </CardFooter>
+            </CardFooter> */}
         </Card>
+        </Skeleton>
     )
 }
 
