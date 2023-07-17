@@ -15,7 +15,7 @@ const Admin = () => {
     ]
     const { isOpen, onOpen, onClose } = useDisclosure()
     return (
-        <Box mt={'0vh'}>
+        <Box mt={'10vh'}>
             <Box onClick={onOpen} fontSize={35} px={10} cursor={'pointer'}>
                 <GiHamburgerMenu />
             </Box>
