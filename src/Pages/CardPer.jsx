@@ -5,7 +5,7 @@ const CardPer = () => {
     const [isLoaded, setIsLoaded] = useState(true)
     return (
         <>
-        <Skeleton height='60vh' isLoaded={isLoaded}borderRadius={10}>
+        <Skeleton height='100%' isLoaded={isLoaded}borderRadius={10}>
         <Card maxW='40vh'>
             <CardBody >
                 <Box m={'auto'} justifyContent={'center'}>

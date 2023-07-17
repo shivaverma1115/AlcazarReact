@@ -1,4 +1,4 @@
-import { Box, Flex, Input, InputGroup, InputLeftElement, Text } from '@chakra-ui/react'
+import { Box, Button, Drawer, DrawerBody, DrawerContent, DrawerHeader, DrawerOverlay, Flex, Input, InputGroup, InputLeftElement, Text, useDisclosure } from '@chakra-ui/react'
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { GiHamburgerMenu } from 'react-icons/gi';
@@ -13,39 +13,35 @@ const Admin = () => {
         { path: "/adminAds", title: "Ads" },
         { path: "/*", title: "Form" }
     ]
-    const [hamber, setHamber] = useState(true);
-    const handleHamber = () => {
-        if (hamber == true) {
-            setHamber(false);
-        }
-        else {
-            setHamber(true);
-        }
-    }
+    const { isOpen, onOpen, onClose } = useDisclosure()
     return (
-        <Box >
-            <Box  onClick={handleHamber} fontSize={35} px={10} cursor={'pointer'}>
-                {hamber ? <GiHamburgerMenu /> : <GiSkullCrossedBones />}
+        <Box mt={'0vh'}>
+            <Box onClick={onOpen} fontSize={35} px={10} cursor={'pointer'}>
+                <GiHamburgerMenu />
             </Box>
-            {
-                hamber?(
-                    <Flex h={'fit-content'} w={'fit-content'} m={'auto'} mt={0}>
+            <Flex h={'fit-content'} w={'fit-content'} m={'auto'} mt={0}>
                 <Box p={10} w={'100%'} h={'fit-content'}>
-                    {
-                        links.map((e, i) => {
-                            return (
-                                <InputGroup my={10} px={5} key={i} outline={'1px solid gray'} fontSize={20} fontWeight={500}>
-                                    <InputGroup>
-                                        <Text mx={10}><Link key={e.path} to={e.path}>{e.title}</Link></Text>
-                                    </InputGroup>
-                                </InputGroup>
-                            )
-                        })
-                    }
+                    <Drawer placement={'left'} onClose={onClose} isOpen={isOpen}>
+                        <DrawerOverlay />
+                        <DrawerContent>
+                            <DrawerHeader fontSize={30} borderBottomWidth='1px' textAlign={'center'} fontWeight={700}>Global Creations</DrawerHeader>
+                            <DrawerBody>
+                                {
+                                    links.map((e, i) => {
+                                        return (
+                                            <InputGroup my={10} px={5} key={i} outline={'1px solid gray'} fontSize={20} fontWeight={500}>
+                                                <InputGroup>
+                                                    <Text mx={10}><Link key={e.path} to={e.path}>{e.title}</Link></Text>
+                                                </InputGroup>
+                                            </InputGroup>
+                                        )
+                                    })
+                                }
+                            </DrawerBody>
+                        </DrawerContent>
+                    </Drawer>
                 </Box>
             </Flex>
-                ):""
-            }
         </Box>
     )
 }

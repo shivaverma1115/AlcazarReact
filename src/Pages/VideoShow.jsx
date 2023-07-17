@@ -3,8 +3,8 @@ import React from 'react'
 
 const VideoShow = () => {
     return (
-        <Flex w={'fit-content'}  h={['fit-content']} display={['block', 'block', 'flex']} m={'auto'} justifyContent={'space-around'} >
-            <AspectRatio my={[5,0,0]} w={['100%','100%','70%']}>
+        <Flex w={'fit-content'}  h={['fit-content']} display={['block', 'block', 'flex']} m={'auto'} justifyContent={'space-around'} mt={[20,20,20]}>
+            <AspectRatio  w={['100%','100%','70%']}>
                 <Box p={[3,5,20]}  >
                     <iframe width={"100%"} height={'100%'}
                     src="https://www.youtube.com/embed/TIebItopm5s" allowfullscreen/>

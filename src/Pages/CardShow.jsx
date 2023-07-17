@@ -4,7 +4,7 @@ import { AspectRatio, Box, Button, Divider, Flex, Heading, Image, SimpleGrid, St
 const CardShow = () => {
     return (
         <Box>
-            <SimpleGrid m={'auto'} p={10} w={['fit-content', 'fit-content', '120vh']} columns={{ base: 1, lg: 2 }} spacing={{ base: 8, md: 10 }} >
+            <SimpleGrid m={'auto'} p={10} w={['fit-content', 'fit-content', '120vh']} columns={{ base: 1, lg: 2 }} spacing={{ base: 8, md: 10 }} mt={[20,20,20]}>
                 <Box as={"flex"} p={[3, 3, 5]} outline={'1px dotted gray'}>
                     <Image rounded={"md"} src={Img3} fit={"cover"} align={"center"} w={"100%"} h={"100%"} />
                 </Box>

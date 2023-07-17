@@ -4,7 +4,7 @@ import Admin from './Admin'
 
 const AdminDelete = () => {
   return (
-    <Flex m={'auto'} display={['block', 'block', 'flex']}mt={'20vh'}>
+    <Flex m={'auto'} display={['block', 'block', 'flex']}mt={'10vh'}>
       <Box w={['100%', '100%', '20%']} ><Admin /></Box>
       <Box  w={['fit-content','fit-content','60%']} m={'auto'} p={10} >
         <Text fontSize={30} fontWeight={700} mb={5}>Delete Details</Text>

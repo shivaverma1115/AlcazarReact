@@ -4,7 +4,7 @@ import { Box, Button, ButtonGroup, Card, CardBody, CardFooter, Divider, Heading,
 const VideoPer = () => {
     const [isLoaded, setIsLoaded] = useState(true)
     return (
-        <Skeleton height='52vh' isLoaded={isLoaded}borderRadius={10}>
+        <Skeleton height='100%' isLoaded={isLoaded}borderRadius={10}>
         <Card maxW='40vh'>
             <CardBody>
                 <Box m={'auto'} justifyContent={'center'}>

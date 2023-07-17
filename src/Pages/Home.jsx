@@ -1,11 +1,12 @@
+
 import { Box, Button, Image, Skeleton } from '@chakra-ui/react'
 import React, { useState } from 'react'
 import Video from './Video'
 import Card from './Card'
 import { useNavigate } from 'react-router-dom'
-import Img2 from "../Photos/2.jpg"
 import Ads from '../Componects/Ads'
 import Footer from '../Componects/Footer'
+import Img2 from "../Photos/2.jpg"
 
 const Home = () => {
   const [isLoaded, setIsLoaded] = useState(true)
@@ -28,12 +29,10 @@ const Home = () => {
             }
           </Box>
         </Box>
-        {/* <Skeleton height='25vh' isLoaded={isLoaded}w={'35%'}m={'auto'}> */}
           <Box w={'fit-content'} m={'auto'} p={5} maxW={'100vh'} mt={5} mb={5}>
             <Image src={Img2} />
           </Box>
-        {/* </Skeleton> */}
-        <Video  />
+        <Video />
         <Card />
       </Box>
       <Footer display={"block"} />
