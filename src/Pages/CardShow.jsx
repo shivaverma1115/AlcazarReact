@@ -1,7 +1,11 @@
 import React from 'react'
 import Img3 from "../Photos/3.jpeg"
-import { AspectRatio, Box, Button, Divider, Flex, Heading, Image, SimpleGrid, Stack, StackDivider, Text, useColorModeValue } from '@chakra-ui/react'
+import GoggleForm from './GoggleForm'
+import { AspectRatio, Box, Button, Divider, Flex, Heading, Image, SimpleGrid, Stack, StackDivider, Text, useColorModeValue, useDisclosure } from '@chakra-ui/react'
 const CardShow = () => {
+    // ============= Toggle Goggle Form ================
+    const { isOpen, onOpen, onClose } = useDisclosure()
+//   ===============================================================
     return (
         <Box>
             <SimpleGrid m={'auto'} p={10} w={['fit-content', 'fit-content', '120vh']} columns={{ base: 1, lg: 2 }} spacing={{ base: 8, md: 10 }} mt={[20,20,20]}>
@@ -23,10 +27,11 @@ const CardShow = () => {
                         <Text>
                             Hello everyone, Welcome to our Channel Global Creations....This is a invitaion video for inviting our friends & relatives in whatsapp.It's very semple to use, firstly you create a video like this and send your all friends & relatives..
                         </Text>
-                        <Button color={"primary"}>Order Form</Button>
+                        <Button color={"primary"}onClick={onOpen}>Order Form</Button>
                     </Stack>
                 </Stack>
             </SimpleGrid>
+            <GoggleForm isOpen={isOpen}onClose={onClose}onOpen={onOpen} />
         </Box>
     )
 }

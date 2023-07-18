@@ -1,13 +1,21 @@
-import { AspectRatio, Box, Button, Divider, Flex, Heading, Stack, StackDivider, Text, useColorModeValue } from '@chakra-ui/react'
+import { AspectRatio, Box, Button, Divider, Flex, Heading, Stack, Text, useDisclosure } from '@chakra-ui/react'
+import GoggleForm from './GoggleForm'
 import React from 'react'
 
 const VideoShow = () => {
+
+
+    // ============= Toggle Goggle Form ================
+    const { isOpen, onOpen, onClose } = useDisclosure()
+//   ===============================================================
+
+
     return (
         <Flex w={'fit-content'}  h={['fit-content']} display={['block', 'block', 'flex']} m={'auto'} justifyContent={'space-around'} mt={[20,20,20]}>
             <AspectRatio  w={['100%','100%','70%']}>
                 <Box p={[3,5,20]}  >
                     <iframe width={"100%"} height={'100%'}
-                    src="https://www.youtube.com/embed/TIebItopm5s" allowfullscreen/>
+                    src="https://www.youtube.com/embed/TIebItopm5s" allowFullScreen/>
                 </Box>
             </AspectRatio>
             <Stack px={10} py={[5, 5, 20]} w={['100%','100%','30%']}  spacing={{ base: 6, md: 10 }}>
@@ -26,9 +34,10 @@ const VideoShow = () => {
                         Hello everyone, Welcome to our Channel Global Creations....This is a invitaion video for inviting our friends & relatives in whatsapp.It's very semple to use, firstly you create a video like this and send your all friends & relatives..
                     </Text>
                     <Divider />
-                    <Button color={"primary"}>Order Form</Button>
+                    <Button color={"primary"} onClick={onOpen} >Order Form</Button>
                 </Stack>
             </Stack>
+            <GoggleForm isOpen={isOpen}onClose={onClose}onOpen={onOpen} />
         </Flex>
     )
 }

@@ -11,6 +11,7 @@ const Card = () => {
   const handleCard=(ele)=>{
     navigate('/ItemDetails') ;
     localStorage.setItem("card",JSON.stringify(ele)) ;
+    localStorage.setItem("Item",JSON.stringify("card")) ;
   }
   return (
     <>

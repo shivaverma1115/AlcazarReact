@@ -11,6 +11,7 @@ const Video = () => {
   const handleVideo=(ele)=>{
     navigate('/ItemDetails') ;
     localStorage.setItem("video",JSON.stringify(ele)) ;
+    localStorage.setItem("Item",JSON.stringify("video")) ;
   }
   return (
     <>

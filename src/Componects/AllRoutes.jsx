@@ -14,6 +14,7 @@ import AdminDelete from '../AdminPages/AdminDelete'
 import AdminBanner from '../AdminPages/AdminBanner'
 import AdminAds from '../AdminPages/AdminAds'
 import AdminForm from '../AdminPages/AdminForm'
+import GoggleForm from '../Pages/GoggleForm'
 const AllRoutes = () => {
   return (
     <Routes>
