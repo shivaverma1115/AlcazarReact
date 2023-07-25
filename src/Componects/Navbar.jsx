@@ -29,6 +29,9 @@ const Navbar = () => {
     const handleAdmin = () => {
         navigate('/admin');
     }
+    const handleRefresh = () => {
+        navigate('/');
+    }
 
 
     const { isOpen, onOpen, onClose } = useDisclosure()
@@ -42,7 +45,7 @@ const Navbar = () => {
                 w={'100%'} p={3} bg={'black'} color={'white'} justifyContent={'space-around'}>
                 <Flex cursor={'pointer'} fontSize={'20px'} fontWeight={800} >
                     <Avatar onClick={handleAdmin} mr={5} src='https://yt3.googleusercontent.com/ytc/AOPolaTeV1m4luShjHRCrzmEgy-6guc_rK1sUPn4TU5SHg=s176-c-k-c0x00ffffff-no-rj-mo' />
-                    <Text m='auto'>Global Creations</Text>
+                    <Text m='auto' onClick={handleRefresh}>Global Creations</Text>
                 </Flex>
                 <Spacer />
                 <Flex fontSize={'20px'} cursor={'pointer'} display={['none', 'none', 'flex']}>

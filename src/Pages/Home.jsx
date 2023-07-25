@@ -17,7 +17,7 @@ const Home = () => {
     { navigate: '/*', title: "Order Form" }
   ]
   return (
-    <>
+    <Box>
     <Ads display={"block"} />
       <Box >
         <Box bg={'#f3d1e2'} p={2} mt={5}>
@@ -36,7 +36,7 @@ const Home = () => {
         <Card />
       </Box>
       <Footer display={"block"} />
-    </>
+    </Box>
   )
 }
 

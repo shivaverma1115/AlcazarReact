@@ -7,12 +7,12 @@ const CardShow = () => {
     const { isOpen, onOpen, onClose } = useDisclosure()
 //   ===============================================================
     return (
-        <Box>
-            <SimpleGrid m={'auto'} p={10} w={['fit-content', 'fit-content', '120vh']} columns={{ base: 1, lg: 2 }} spacing={{ base: 8, md: 10 }} mt={[20,20,20]}>
+        <Box bgGradient={'linear(to-tr, gray.400, white)'}>
+            <SimpleGrid m={'auto'} p={10} w={['fit-content', 'fit-content', '125vh']} columns={{ base: 1, lg: 2 }} spacing={{ base: 8, md: 10 }} mt={20}>
                 <Box as={"flex"} p={[3, 3, 5]} outline={'1px dotted gray'}>
                     <Image rounded={"md"} src={Img3} fit={"cover"} align={"center"} w={"100%"} h={"100%"} />
                 </Box>
-                <Stack spacing={{ base: 6, md: 10 }} p={[3, 3, 10]}>
+                <Stack spacing={{ base: 6, md: 10 }} p={[3, 3, 10]} bgGradient={'linear(to-tr,gray.400, white, gray.400)'}>
                     <Box as={"header"}>
                         <Heading lineHeight={1.1} fontWeight={600} fontSize={{ base: "2xl", sm: "4xl", lg: "5xl" }}>
                             A Digital Indian Wedding Invitations Card
