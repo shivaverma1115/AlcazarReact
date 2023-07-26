@@ -10,7 +10,6 @@ import { AppContext } from '../ContextApp/AppContextProvider'
 const Video = () => {
 
   const Data = useContext(AppContext) ;
-  console.log(Data) ;
 
   const navigate = useNavigate();
   const handleVideo=(ele)=>{
