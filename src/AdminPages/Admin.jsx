@@ -6,7 +6,6 @@ import { GiSkullCrossedBones } from 'react-icons/gi';
 
 const Admin = () => {
     const links = [
-        { path: "/adminVideo", title: "Video" },
         { path: "/adminCard", title: "Card" },
         { path: "/admindelete", title: "Delete" },
         { path: "/adminBanner", title: "Banner" },

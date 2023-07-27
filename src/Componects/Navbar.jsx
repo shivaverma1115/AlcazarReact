@@ -1,18 +1,19 @@
 import { Avatar, Box, Button, Drawer, DrawerBody, DrawerContent, DrawerHeader, DrawerOverlay, Flex, Image, Img, Radio, RadioGroup, Spacer, Stack, Text, useDisclosure } from '@chakra-ui/react'
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { GiSkullCrossedBones } from 'react-icons/gi';
 import { ColorModeSwitcher } from '../ColorModeSwitcher';
 import { Link, useNavigate } from 'react-router-dom';
+import { AppContext } from '../ContextApp/AppContextProvider';
 
 const Navbar = () => {
     const links = [
         { path: '/', title: "Home" },
         { path: '/video', title: "Video" },
         { path: '/card', title: "Card" },
-        { path: '/about', title: "About Us" },
         { path: '/contact', title: "Contact Us" },
         { path: '/faq', title: "FAQ" },
+        { path: '/login', title: "Login" },
     ]
     // =================== hamberger =====================
     const [hamber, setHamber] = useState(true);
@@ -29,8 +30,11 @@ const Navbar = () => {
     const handleAdmin = () => {
         navigate('/admin');
     }
+
+    const {fetchData} = useContext(AppContext);
     const handleRefresh = () => {
         navigate('/');
+        fetchData() ;
     }
 
 

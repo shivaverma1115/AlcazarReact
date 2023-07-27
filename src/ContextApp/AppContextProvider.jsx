@@ -1,31 +1,42 @@
 import React, { createContext, useEffect, useState } from 'react'
+export const AppContext = createContext();
 
-export const AppContext = createContext() ;
+const AppContextProvider = ({ children }) => {
+    const [Data, setData] = useState([]
+        || JSON.parse(localStorage.getItem("Data"))
+    );
 
-const AppContextProvider = ({children})=>{
-    const [section,setSection] = useState('videos') ;
-    const [Data,setData] = useState([]) ;
-
-    const fetchData = async()=>{
-        var q = 'global creations'
+    const [playListId, setplayListId] = useState('PLdZ7wsCqF8CZNFPSnnPEc3_A0DOFcWGlg')
+    const [nextPageToken, setNextPageToken] = useState('');
+    const fetchData = async () => {
         try {
-            var res = await fetch
-            // (`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${q}&type=video&key=${youtubeAPI}`)
-            (`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=50&q=globalCreations&channelId=UCGQ_44ZukjKrTbSZdMvBvmw&type=video&key=${process.env.REACT_APP_YOUTUBE_API_KEY}`)
-            var ans = await res.json() ;
-            setData(ans.items) ;
+            var res = await fetch(`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${playListId}&pageToken=${nextPageToken}&maxResults=50&key=${process.env.REACT_APP_YOUTUBE_API_KEY}`)
+            var ans = await res.json();
+            setData(data =>(data,ans.items));
+            console.log(ans);
+            if( ans.nextPageToken !== undefined ){
+                setNextPageToken(ans.nextPageToken);
+            }
         } catch (error) {
             return <h1>Something went wrong</h1>
         }
     }
-    console.log(Data) ;
-    useEffect(()=>{
-        fetchData() ;
-    },[])
+    useEffect(() => {
+        fetchData();
+    }, [nextPageToken])
+    localStorage.setItem("Data", JSON.stringify(Data));
 
-    return <AppContext.Provider value={Data} >
-      {children}
+    const [state, setState] = useState({
+        isAuth: false,
+        loading: false,
+        error: null,
+        token: "",
+    })
+
+    console.log(Data);
+    return <AppContext.Provider value={{ Data, state, setState }} >
+        {children}
     </AppContext.Provider>
-  }
+}
 
 export default AppContextProvider

@@ -31,7 +31,7 @@ const VideoShow = () => {
             <AspectRatio w={['100%', '100%', '70%']}h={'90%'}maxH={'90vh'}>
                 <Box p={5} >
                     <iframe width="100%" height="90%"
-                        src={`https://www.youtube.com/embed/${id.videoId}`}
+                        src={`https://www.youtube.com/embed/${snippet.resourceId.videoId}`}
                         allowFullScreen />
                 </Box>
             </AspectRatio>
@@ -47,7 +47,7 @@ const VideoShow = () => {
                     <Text color="gray.900" fontWeight={600} fontSize={"2xl"}>₹ {Inp.price} /-</Text>
                 </Box>
                 <Stack>
-                    <Text>
+                    <Text maxH={'25vh'}overflow={'auto'}>
                     {snippet.description}
                     </Text>
                     <Divider />
