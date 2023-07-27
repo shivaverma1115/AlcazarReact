@@ -2,9 +2,7 @@ import React, { createContext, useEffect, useState } from 'react'
 export const AppContext = createContext();
 
 const AppContextProvider = ({ children }) => {
-    const [Data, setData] = useState([]
-        || JSON.parse(localStorage.getItem("Data"))
-    );
+    const [Data, setData] = useState([]);
 
     const [playListId, setplayListId] = useState('PLdZ7wsCqF8CZNFPSnnPEc3_A0DOFcWGlg')
     const [nextPageToken, setNextPageToken] = useState('');
@@ -12,9 +10,10 @@ const AppContextProvider = ({ children }) => {
         try {
             var res = await fetch(`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${playListId}&pageToken=${nextPageToken}&maxResults=50&key=${process.env.REACT_APP_YOUTUBE_API_KEY}`)
             var ans = await res.json();
-            setData(data =>(data,ans.items));
+            const newArray = [...Data,...ans.items];
+            setData(newArray);
             console.log(ans);
-            if( ans.nextPageToken !== undefined ){
+            if (ans.nextPageToken !== undefined) {
                 setNextPageToken(ans.nextPageToken);
             }
         } catch (error) {

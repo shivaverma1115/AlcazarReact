@@ -3,6 +3,7 @@ import { Box, Button, ButtonGroup, Card, CardBody, CardFooter, Divider, Flex, He
 import {GiSplitCross} from "react-icons/gi"
 const VideoPer = ({ele,isAuth}) => {
     const {id,snippet,title} = ele ;
+    // const url = snippet.thumbnails.high.url;
     return (
         <>
         <Card maxW='40vh'>

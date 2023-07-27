@@ -33,10 +33,6 @@ const Video = () => {
               </GridItem>
             })
           }
-        <Flex justifyContent={'space-around'} w={'100%'} h={'fit-content'}m={'auto'}>
-          <Button m={5} disabled >Previous</Button>
-          <Button m={5}>Next</Button>
-        </Flex>
         </Grid>
       </Box>
       <Footer display={"none"} />
