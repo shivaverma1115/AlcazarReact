@@ -4,6 +4,8 @@ export const AppContext = createContext();
 const AppContextProvider = ({ children }) => {
     const [Data, setData] = useState([]);
 
+    const [Loading,setLoading] = useState(true) ;
+
     const [playListId, setplayListId] = useState('PLdZ7wsCqF8CZNFPSnnPEc3_A0DOFcWGlg')
     const [nextPageToken, setNextPageToken] = useState('');
     const fetchData = async () => {
@@ -12,6 +14,7 @@ const AppContextProvider = ({ children }) => {
             var ans = await res.json();
             const newArray = [...Data,...ans.items];
             setData(newArray);
+            setLoading(false) ;
             console.log(ans);
             if (ans.nextPageToken !== undefined) {
                 setNextPageToken(ans.nextPageToken);
@@ -23,7 +26,6 @@ const AppContextProvider = ({ children }) => {
     useEffect(() => {
         fetchData();
     }, [nextPageToken])
-    localStorage.setItem("Data", JSON.stringify(Data));
 
     const [state, setState] = useState({
         isAuth: false,
@@ -31,8 +33,10 @@ const AppContextProvider = ({ children }) => {
         error: null,
         token: "",
     })
+    if( Loading){
+        return <h1 style={{width:'fit-content',margin:'auto'}} ><img src='https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921' /></h1>
+    }
 
-    console.log(Data);
     return <AppContext.Provider value={{ Data, state, setState }} >
         {children}
     </AppContext.Provider>

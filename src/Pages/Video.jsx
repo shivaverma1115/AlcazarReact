@@ -13,6 +13,8 @@ const Video = () => {
   const {Data} = useContext(AppContext);
   const {state} =useContext(AppContext) ;
 
+  console.log(useContext(AppContext))
+
   const navigate = useNavigate();
   const handleVideo = (ele) => {
     navigate('/ItemDetails');

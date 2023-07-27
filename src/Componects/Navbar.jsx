@@ -1,7 +1,6 @@
-import { Avatar, Box, Button, Drawer, DrawerBody, DrawerContent, DrawerHeader, DrawerOverlay, Flex, Image, Img, Radio, RadioGroup, Spacer, Stack, Text, useDisclosure } from '@chakra-ui/react'
+import { Avatar, Box, Drawer, DrawerBody, DrawerContent, DrawerHeader, DrawerOverlay, Flex, Spacer, Text, useDisclosure } from '@chakra-ui/react'
 import React, { useContext, useState } from 'react'
 import { GiHamburgerMenu } from 'react-icons/gi';
-import { GiSkullCrossedBones } from 'react-icons/gi';
 import { ColorModeSwitcher } from '../ColorModeSwitcher';
 import { Link, useNavigate } from 'react-router-dom';
 import { AppContext } from '../ContextApp/AppContextProvider';
@@ -31,15 +30,12 @@ const Navbar = () => {
         navigate('/admin');
     }
 
-    const {fetchData} = useContext(AppContext);
     const handleRefresh = () => {
         navigate('/');
-        fetchData() ;
     }
 
 
     const { isOpen, onOpen, onClose } = useDisclosure()
-    const [placement, setPlacement] = useState('right')
 
 
     return (
