@@ -1,12 +1,13 @@
 
 import { Box, Button, Image, Skeleton } from '@chakra-ui/react'
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import Video from './Video'
 import Card from './Card'
 import { useNavigate } from 'react-router-dom'
 import Ads from '../Componects/Ads'
 import Footer from '../Componects/Footer'
 import Img2 from "../Photos/2.jpg"
+import { AppContext } from '../ContextApp/AppContextProvider'
 
 const Home = () => {
   const [isLoaded, setIsLoaded] = useState(true)
@@ -16,6 +17,12 @@ const Home = () => {
     { navigate: '/card', title: "Invitation Card" },
     { navigate: '/*', title: "Order Form" }
   ]
+
+  const {handleSort} = useContext(AppContext) ;
+  const sortfunction=()=>{
+    handleSort() ;
+    navigate('/') ;
+  }
   return (
     <Box>
     <Ads display={"block"} />
@@ -32,6 +39,7 @@ const Home = () => {
           <Box w={'fit-content'} m={'auto'} p={5} maxW={'100vh'} mt={5} mb={5}>
             <Image src={Img2} />
           </Box>
+          <Button onClick={()=>sortfunction()}>Sort</Button>
         <Video />
         <Card />
       </Box>

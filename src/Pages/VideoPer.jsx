@@ -13,7 +13,6 @@ const VideoPer = ({ ele, isAuth }) => {
     return (
         <>
             <Card maxW='40vh'>
-                <Flex mt={'-10px'} display={isAuth ? "block" : "none"} w={'fit-content'} m={'auto'} fontSize={35} top={5} position={'relative'}><GiSplitCross /></Flex>
                 <CardBody>
                     <Box m={'auto'} justifyContent={'center'}>
                         <Image
