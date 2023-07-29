@@ -8,36 +8,12 @@ import { AppContext } from '../ContextApp/AppContextProvider';
 const VideoShow = () => {
 
     var ele = JSON.parse(localStorage.getItem("video"));
-    const { id, snippet, title } = ele;
-    const {position} = snippet ;
-
-    const {state} = useContext(AppContext) ;
-    const [isAuth,setIsAuth] = useState(state.isAuth) ;
+    const { id, snippet, title ,mrp,price,code} = ele;
 
     // ============= Toggle Goggle Form ================
     const { isOpen, onOpen, onClose } = useDisclosure()
     //   ===============================================================
 
-    const [Inp, setInp] = useState({
-        id:position,
-        code: "003",
-        mrp: "1500",
-        price: "500"
-    })
-    const handleInp = (e) => {
-        setInp({ ...Inp, [e.target.name]: e.target.value });
-    }
-     const handleSubmit = () => {
-        fetch(`http://localhost:8080/posts`,{
-            method:"POST",
-            headers:{
-                "Content-Type":"application/json",
-            },
-            body:JSON.stringify(Inp) ,
-        }).then(()=>{
-            console.log(Inp) ;
-         })
-    }
     return (
         <Box mt={20} h={'90vh'} overflow={'auto'} >
             <Flex
@@ -58,18 +34,10 @@ const VideoShow = () => {
                         <Divider />
                         <Flex>
                         <Box>
-                            <Text color="gray.900" fontWeight={300} fontSize={"2xl"}>GC{Inp.code}</Text>
-                            <Text textDecoration={'line-through'} color="gray.900" fontWeight={300} > ₹ {Inp.mrp} /-</Text>
-                            <Text color="gray.900" fontWeight={600} fontSize={"2xl"}>₹ {Inp.price} /-</Text>
-                        </Box><Spacer/>
-                        {isAuth?(
-                            <Box justifyContent={'right'}w={'40%'} >
-                            <Input type='number' name='code' w={40} onChange={(e) => handleInp(e)} />
-                            <Input type='number' name='mrp' w={40} onChange={(e) => handleInp(e)} />
-                            <Input type='number' name='price' w={40} onChange={(e) => handleInp(e)} /> <br/>
-                            <Button onClick={() => handleSubmit()} >Submit</Button>
+                            <Text color="gray.900" fontWeight={300} fontSize={"2xl"}>{code}</Text>
+                            <Text textDecoration={'line-through'} color="gray.900" fontWeight={300} > ₹ {mrp} /-</Text>
+                            <Text color="gray.900" fontWeight={600} fontSize={"2xl"}>₹ {price} /-</Text>
                         </Box>
-                        ):""}
                         </Flex>
                     </Box>
                     <Stack>

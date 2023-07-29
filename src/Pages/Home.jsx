@@ -1,6 +1,6 @@
 
-import { Box, Button, Image, Skeleton } from '@chakra-ui/react'
-import React, { useContext, useState } from 'react'
+import { Box, Button, Image, Input, Skeleton } from '@chakra-ui/react'
+import React, { useContext, useEffect, useState } from 'react'
 import Video from './Video'
 import Card from './Card'
 import { useNavigate } from 'react-router-dom'
@@ -18,11 +18,25 @@ const Home = () => {
     { navigate: '/*', title: "Order Form" }
   ]
 
-  const {handleSort} = useContext(AppContext) ;
-  const sortfunction=()=>{
-    handleSort() ;
+  const {handleSortAcc,handleSortDes} = useContext(AppContext) ;
+  const sortbyAccesnding=()=>{
+    handleSortAcc() ;
     navigate('/') ;
   }
+
+  const sortBydecending=()=>{
+    handleSortDes() ;
+    navigate('/') ;
+  }
+  
+
+ 
+  // const handleSearch=()=>{
+  //   console.log(Inp.toLowerCase()) ;
+  //   Data.filter((ele)=>{
+  //     return Inp.toLowerCase()===''?ele:ele.snippet.title.toLowerCase().includes(ele) ;
+  //   })
+  // }
   return (
     <Box>
     <Ads display={"block"} />
@@ -39,7 +53,10 @@ const Home = () => {
           <Box w={'fit-content'} m={'auto'} p={5} maxW={'100vh'} mt={5} mb={5}>
             <Image src={Img2} />
           </Box>
-          <Button onClick={()=>sortfunction()}>Sort</Button>
+          <Box>
+          <Button onClick={()=>sortbyAccesnding()}>Sort by Assending</Button>
+          <Button onClick={()=>sortBydecending()}>Sort by decending</Button>
+          </Box>
         <Video />
         <Card />
       </Box>
