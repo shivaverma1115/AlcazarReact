@@ -1,9 +1,9 @@
 import React, { createContext, useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom';
 export const AppContext = createContext();
 
 const AppContextProvider = ({ children }) => {
     const [Data, setData] = useState([]);
+    const [obj,setObj] = useState({}) ;
 
     const [Loading, setLoading] = useState(true);
 
@@ -60,11 +60,6 @@ const AppContextProvider = ({ children }) => {
         setData(sortData);
     };
 
-    const handleSearch = () => {
-        // var searchInput = Inp.toUpperCase() ;
-        // console.log(searchInput)  ;
-    }
-
 
     const [state, setState] = useState({
         isAuth: false,
@@ -80,8 +75,8 @@ const AppContextProvider = ({ children }) => {
         Data,setData,
         state, setState
         , handleSortAcc
-        , handleSortDes,
-        handleSearch
+        , handleSortDes
+        ,setObj,obj
     }} >
         {children}
     </AppContext.Provider>

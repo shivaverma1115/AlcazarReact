@@ -1,32 +1,4 @@
 {
-  "posts": [
-    {
-      "id": 2,
-      "code": "001",
-      "mrp": "2500",
-      "price": "2000"
-    },
-    {
-      "id": 3,
-      "code": "0010",
-      "mrp": "25000",
-      "price": "500"
-    },
-    {
-      "id": 4,
-      "code": "250000",
-      "mrp": "2000",
-      "price": "25800"
-    }
-  ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  "dbVideos": [
+  ]
 }

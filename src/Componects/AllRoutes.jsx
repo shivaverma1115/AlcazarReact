@@ -14,11 +14,13 @@ import AdminAds from '../AdminPages/AdminAds'
 import AdminForm from '../AdminPages/AdminForm'
 import GoggleForm from '../Pages/GoggleForm'
 import Login from '../Login/Login'
+import VideoShow from '../Pages/VideoShow'
 const AllRoutes = () => {
   return (
     <Routes>
       <Route path="/" element={<Home/>} ></Route>
       <Route path="/video" element={<Video/>} ></Route>
+      <Route path="/videoShow" element={<VideoShow/>} ></Route>
       <Route path="/card" element={<Card/>} ></Route>
       <Route path="/login" element={<Login/>} ></Route>
       <Route path="/contact" element={<Contact/>} ></Route>

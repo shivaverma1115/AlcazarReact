@@ -1,7 +1,7 @@
 import React from 'react'
 import { Box, Card, CardBody, Flex, Heading, Image, Stack } from '@chakra-ui/react'
 import { GiSplitCross } from "react-icons/gi"
-const VideoPer = ({ ele, isAuth }) => {
+const VideoPer = ({ ele }) => {
     const { id, snippet, title } = ele ;
     var url = '' ;
     if( snippet.thumbnails.high !== undefined ){
@@ -23,9 +23,6 @@ const VideoPer = ({ ele, isAuth }) => {
                     </Box>
                     <Stack mt='6' spacing='3'>
                         <Heading size='md'>{snippet.title}</Heading>
-                        {/* <Text w={'80%'}>
-                    {snippet.description}
-                    </Text> */}
                     </Stack>
                 </CardBody>
             </Card>

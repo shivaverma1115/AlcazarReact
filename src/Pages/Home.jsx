@@ -10,7 +10,6 @@ import Img2 from "../Photos/2.jpg"
 import { AppContext } from '../ContextApp/AppContextProvider'
 
 const Home = () => {
-  const [isLoaded, setIsLoaded] = useState(true)
   const navigate = useNavigate();
   const btn = [
     { navigate: '/video', title: "Invitation Video" },
@@ -18,25 +17,6 @@ const Home = () => {
     { navigate: '/*', title: "Order Form" }
   ]
 
-  const {handleSortAcc,handleSortDes} = useContext(AppContext) ;
-  const sortbyAccesnding=()=>{
-    handleSortAcc() ;
-    navigate('/') ;
-  }
-
-  const sortBydecending=()=>{
-    handleSortDes() ;
-    navigate('/') ;
-  }
-  
-
- 
-  // const handleSearch=()=>{
-  //   console.log(Inp.toLowerCase()) ;
-  //   Data.filter((ele)=>{
-  //     return Inp.toLowerCase()===''?ele:ele.snippet.title.toLowerCase().includes(ele) ;
-  //   })
-  // }
   return (
     <Box>
     <Ads display={"block"} />
@@ -52,10 +32,6 @@ const Home = () => {
         </Box>
           <Box w={'fit-content'} m={'auto'} p={5} maxW={'100vh'} mt={5} mb={5}>
             <Image src={Img2} />
-          </Box>
-          <Box>
-          <Button onClick={()=>sortbyAccesnding()}>Sort by Assending</Button>
-          <Button onClick={()=>sortBydecending()}>Sort by decending</Button>
           </Box>
         <Video />
         <Card />

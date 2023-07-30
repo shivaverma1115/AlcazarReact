@@ -1,11 +1,12 @@
 import React, { useContext, useState } from 'react'
 import { Alert, AlertIcon, Box, Button, Editable, EditablePreview, FormControl, FormLabel, Input } from '@chakra-ui/react'
 import { AppContext } from '../ContextApp/AppContextProvider';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
 
-    const { setState } = useContext(AppContext);
-    const { state } = useContext(AppContext);
+    const { setState ,state} = useContext(AppContext);
+    const navigate = useNavigate();
 
 
     const [Inp, setInp] = useState('');
@@ -16,10 +17,12 @@ const Login = () => {
         if (Inp.user === 'shivaverma1115' && Inp.password === '1234') {
             setState({ ...state, isAuth: true })
             alert("Login Successful !")
+            navigate(`/`);
         }
     }
     const handleLogOut = () => {
         setState({ ...state, isAuth: false })
+        alert("LogOut Successful !")
     }
     return (
         <>
@@ -32,7 +35,7 @@ const Login = () => {
                     <FormLabel>Password</FormLabel>
                     <Input name='password' onChange={(e) => handleInp(e)} placeholder='Password' />
                 </FormControl>
-                <Button onClick={handleSubmit} m={5}>Submit</Button>
+                <Button onClick={handleSubmit} m={5}>Login</Button>
                 <Button onClick={handleLogOut} m={5}>LogOut</Button>
             </Box>
         </>
