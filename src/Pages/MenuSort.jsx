@@ -18,7 +18,7 @@ const MenuSort = ({ setInp }) => {
     return (
         <Flex w={'100%'}border={'1px solid gray'}mb={10}>
             <InputGroup size='sm'>
-                <InputLeftAddon onClick={sortbyAccesnding} children='Asc order' />
+                <InputLeftAddon onClick={sortbyAccesnding} children='Sort GC code' cursor={'pointer'}/>
                 <Input placeholder='Search Videos' onChange={(e) => setInp(e.target.value)} />
             </InputGroup>
             <select onChange={(e) => setInp(e.target.value)} style={{width:"30%"}}>

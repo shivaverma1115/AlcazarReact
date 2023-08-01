@@ -1,5 +1,5 @@
-import { Box, Button, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Radio, RadioGroup, Stack, useDisclosure } from '@chakra-ui/react'
-import React, { useState } from 'react'
+import { Box, Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay} from '@chakra-ui/react'
+import React from 'react'
 
 const GoggleForm = ({ isOpen, onClose, onOpen }) => {
     return (
@@ -18,9 +18,6 @@ const GoggleForm = ({ isOpen, onClose, onOpen }) => {
                             <iframe width={'100%'} height={'100%'} src="https://docs.google.com/forms/d/e/1FAIpQLSeBIhDPwVekkDRwijKTE6oR-EIzserAIO5oAwBQbfkR_OyF0Q/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
                         </Box>
                     </ModalBody>
-                    {/* <ModalFooter>
-                        <Button onClick={onClose}>Close</Button>
-                    </ModalFooter> */}
                 </ModalContent>
             </Modal>
         </Box>
