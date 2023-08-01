@@ -1,19 +1,18 @@
 import React, { useContext } from 'react'
 import { AppContext } from '../ContextApp/AppContextProvider'
-import { Box} from '@chakra-ui/react'
+import { Box, Flex} from '@chakra-ui/react'
+import AccordionFloder from './AccordionFloder'
 
 const UserDetails = () => {
     const { AllUsers } = useContext(AppContext)
+    console.log(AllUsers) ;
     return (
         <Box>
-            {AllUsers.map((ele, i) => {
-                const jsonString = JSON.stringify(ele, null, 2);
-                return (
-                    <Box>
-                       {jsonString}
-                    </Box>
-                )
-            })}
+            {
+                AllUsers.map((ele,i)=>{
+                   return <AccordionFloder key={i} ele={ele} />
+                })
+            }
         </Box>
     )
 }

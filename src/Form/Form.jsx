@@ -1,20 +1,23 @@
 
 import { Box, Button } from '@chakra-ui/react'
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import FormControle from './FormControle'
 import RadioOption from './RadioOption'
 import { AppContext } from '../ContextApp/AppContextProvider'
 
 const Form = () => {
+
     const {AllUsers,setAllUsers} = useContext(AppContext)
+
     const [OrderData,setOrderData] = useState({}) ;
     const handleInp = (e)=>{
         setOrderData({...OrderData,[e.target.name]:e.target.value})
     }
-    const handleSubmit =()=>{
+
+    const handleSubmit = ()=>{
         setAllUsers([...AllUsers,OrderData])
-        console.log(AllUsers) ;
     }
+    console.log(AllUsers) ;
 
 
     const form = [
@@ -25,19 +28,19 @@ const Form = () => {
         { label: "Product code of the video *GC00*", type: "text", placeholder: "GC00" },
         { label: "If you want to change the music of the video, you can give a link to the YouTube video.", type: "text", placeholder: "Song_link" },
 
-        { label: "On whose behalf do you want to make the invitation video ( Groom/Bride )", type: "Radio", input: "", placeholder: "Groom/Bride", number: "2" },
+        { label: "On whose behalf do you want to make the invitation video ( Groom/Bride )", type: "Radio", input: "", placeholder: "couple", number: "2" },
 
         { label: "Family Surname", type: "text", placeholder: "Family_Surname" },
         { label: "Groom Name", type: "text", placeholder: "Groom_Name" },
-        { label: "Groom's Father Name", type: "text", placeholder: "Groom's_Father_Name" },
-        { label: "Groom's Mother Name", type: "text", placeholder: "Groom's_Mother_Name" },
+        { label: "Groom's Father Name", type: "text", placeholder: "Grooms_Father_Name" },
+        { label: "Groom's Mother Name", type: "text", placeholder: "Grooms_Mother_Name" },
         { label: "Bride Name", type: "text", placeholder: "Bride_Name" },
-        { label: "Bride's Father Name", type: "text", placeholder: "Bride's_Father_Name" },
-        { label: "Bride's Mother Name", type: "text", placeholder: "Bride's_Mother_Name" },
+        { label: "Bride's Father Name", type: "text", placeholder: "Brides_Father_Name" },
+        { label: "Bride's Mother Name", type: "text", placeholder: "Brides_Mother_Name" },
 
-        { label: "1 Program Name", type: "text", placeholder: "1_Program_Name" },
-        { label: "1 Program Date and Time", type: "datetime-local", placeholder: "1_Program_Date" },
-        { label: "1 Program Venue", type: "text", placeholder: "1_Program Venue" },
+        { label: "1 Program Name", type: "text", placeholder: "first_Program_Name" },
+        { label: "1 Program Date and Time", type: "datetime-local", placeholder: "first_Program_Date" },
+        { label: "1 Program Venue", type: "text", placeholder: "first_Program_Venue" },
 
         { label: "2 Program Name", type: "text", placeholder: "2_Program Name" },
         { label: "2 Program Date and Time", type: "datetime-local", placeholder: "2_Program Date" },
