@@ -8,27 +8,32 @@ import { AppContext } from '../ContextApp/AppContextProvider'
 const Form = () => {
 
     const {AllUsers,setAllUsers} = useContext(AppContext)
-
+    
     const [OrderData,setOrderData] = useState({}) ;
     const handleInp = (e)=>{
-        setOrderData({...OrderData,[e.target.name]:e.target.value})
+        setOrderData({...OrderData,[e.target.name]:e.target.value}) ;
     }
 
     const handleSubmit = ()=>{
-        setAllUsers([...AllUsers,OrderData])
+        setAllUsers([OrderData,...AllUsers])
+        fetch(`https://carver-data-base.onrender.com/AllUsers`,{
+            method:"POST",
+            headers:{
+                "Content-Type":"application/json",
+            },
+            body:JSON.stringify(OrderData) 
+        }).then(()=>console.log(OrderData)) ;
     }
-    console.log(AllUsers) ;
-
 
     const form = [
         { label: "Email", type: "text", placeholder: "Email" },
         { label: "Form Filling Date", type: "date", placeholder: "Form_Filling_Date" },
         { label: "Your Name", type: "text", placeholder: "Your_Name" },
-        { label: "Whatsapp No.", type: "number", placeholder: "Whatsapp_No." },
+        { label: "Whatsapp No", type: "number", placeholder: "Whatsapp_No" },
         { label: "Product code of the video *GC00*", type: "text", placeholder: "GC00" },
         { label: "If you want to change the music of the video, you can give a link to the YouTube video.", type: "text", placeholder: "Song_link" },
 
-        { label: "On whose behalf do you want to make the invitation video ( Groom/Bride )", type: "Radio", input: "", placeholder: "couple", number: "2" },
+        { label: "On whose behalf do you want to make the invitation video ( Groom/Bride )", type: "Radio", input: "", placeholder: "onbehalf", number: "2" },
 
         { label: "Family Surname", type: "text", placeholder: "Family_Surname" },
         { label: "Groom Name", type: "text", placeholder: "Groom_Name" },
@@ -42,13 +47,13 @@ const Form = () => {
         { label: "1 Program Date and Time", type: "datetime-local", placeholder: "first_Program_Date" },
         { label: "1 Program Venue", type: "text", placeholder: "first_Program_Venue" },
 
-        { label: "2 Program Name", type: "text", placeholder: "2_Program Name" },
-        { label: "2 Program Date and Time", type: "datetime-local", placeholder: "2_Program Date" },
-        { label: "2 Program Venue", type: "text", placeholder: "2_Program Venue" },
+        { label: "2 Program Name", type: "text", placeholder: "second_Program_Name" },
+        { label: "2 Program Date and Time", type: "datetime-local", placeholder: "second_Program_Date" },
+        { label: "2 Program Venue", type: "text", placeholder: "second_Program_Venue" },
 
-        { label: "3 Program Name", type: "text", placeholder: "3_Program Name" },
-        { label: "3 Program Date and Time", type: "datetime-local", placeholder: "3_Program_Date" },
-        { label: "3 Program Venue", type: "text", placeholder: "3_Program Venue" },
+        { label: "3 Program Name", type: "text", placeholder: "third_Program_Name" },
+        { label: "3 Program Date and Time", type: "datetime-local", placeholder: "third_Program_Date" },
+        { label: "3 Program Venue", type: "text", placeholder: "third_Program_Venue" },
 
         { label: "Other details (R.S.V.P etc.)", type: "text", placeholder: "Other_details" },
 

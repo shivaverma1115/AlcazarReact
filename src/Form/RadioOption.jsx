@@ -15,9 +15,9 @@ const RadioOption = ({ label ,handleInp}) => {
                     display={state.isAuth?"block":"none"}
                     />
                 </Flex>
-                <Stack spacing={5} direction='row'name="" value="" onChange={(e)=>handleInp(e)}>
-                    <Radio colorScheme='green'name='Groom' value='Groom'>Groom</Radio>
-                    <Radio colorScheme='green'name='Bride' value='Bride'>Bride</Radio>
+                <Stack spacing={5} direction='row'name="onbehalf" value="" onChange={(e)=>handleInp(e)}>
+                    <Radio colorScheme='green'name='onbehalf' value='Groom'>Groom</Radio>
+                    <Radio colorScheme='green'name='onbehalf' value='Bride'>Bride</Radio>
                 </Stack>
             </RadioGroup>
         </FormControl>

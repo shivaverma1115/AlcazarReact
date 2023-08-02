@@ -5,7 +5,7 @@ import TabSection from './TabSection'
 
 const Order = () => {
     return (
-        <Box bg={'#f8e6eb'} pb={20}>
+        <Box bg={'#f8e6eb'} pb={20} minH={'90vh'}>
             <Box w={['90%', '80%', '40%']} m={'auto'}>
                 <Ads />
                 <TabSection />
