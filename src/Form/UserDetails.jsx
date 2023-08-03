@@ -1,6 +1,5 @@
-import React, { useContext, useEffect, useState } from 'react'
-import { AppContext } from '../ContextApp/AppContextProvider'
-import { Box, Flex } from '@chakra-ui/react'
+import React, {  useEffect, useState } from 'react'
+import { Box } from '@chakra-ui/react'
 import AccordionFloder from './AccordionFloder'
 
 const UserDetails = () => {

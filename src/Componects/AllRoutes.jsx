@@ -10,7 +10,6 @@ import AdminCard from '../AdminPages/AdminCard'
 import AdminDelete from '../AdminPages/AdminDelete'
 import AdminBanner from '../AdminPages/AdminBanner'
 import AdminAds from '../AdminPages/AdminAds'
-import AdminForm from '../AdminPages/AdminForm'
 import Login from '../Login/Login'
 import VideoShow from '../Pages/VideoShow'
 import Order from '../Form/Order'
@@ -30,7 +29,6 @@ const AllRoutes = () => {
       <Route path="/adminDelete" element={<AdminDelete/>} ></Route>
       <Route path="/adminBanner" element={<AdminBanner/>} ></Route>
       <Route path="/adminAds" element={<AdminAds/>} ></Route>
-      <Route path="/adminForm" element={<AdminForm/>} ></Route>
     </Routes>
   )
 }

@@ -1,19 +1,28 @@
-import React from 'react'
-import { Thead, Tfoot, Tr, Td, TableContainer, Accordion, AccordionItem, AccordionButton, AccordionPanel, AccordionIcon, Box, Spacer, Table, Th, Tbody, Button, WrapItem, } from '@chakra-ui/react'
+import React, { useContext } from 'react'
+import { Thead, Tfoot, Tr, Td, TableContainer, Accordion, AccordionItem, AccordionButton, AccordionPanel, AccordionIcon, Box, Spacer, Table, Th, Tbody, Button, WrapItem, Flex, } from '@chakra-ui/react'
+import { AppContext } from '../ContextApp/AppContextProvider';
 
 const AccordionFloder = ({ ele, handleDLT }) => {
+
+    const { userImg } = useContext(AppContext);
+
     const { id, Email, Form_Filling_Date, Your_Name, Whatsapp_No, GC00, Song_link, onbehalf, Family_Surname, Groom_Name, Grooms_Father_Name, Grooms_Mother_Name, Bride_Name, Brides_Father_Name, Brides_Mother_Name, first_Program_Name, first_Program_Date, first_Program_Venue, second_Program_Name, second_Program_Date, second_Program_Venue, third_Program_Name, third_Program_Date, third_Program_Venue, Other_details } = ele;
     return (
         <Accordion allowToggle bg={'white'}>
             <AccordionItem>
-                <h2>
+                <Flex>
                     <AccordionButton>
                         <Box as="span" flex='1' textAlign='left'>
                             <Box>{Your_Name}</Box>
                         </Box>
                         <AccordionIcon />
                     </AccordionButton>
-                </h2>
+                    <AccordionButton>
+                        {userImg.map((ele, i) => {
+                            return <img src={ele.secure_url} key={i} />
+                        })}
+                    </AccordionButton>
+                </Flex>
                 <AccordionPanel>
                     <TableContainer >
                         <Table size='sm' bg={'pink'}>

@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react'
-import { Alert, AlertIcon, Box, Button, Editable, EditablePreview, FormControl, FormLabel, Input } from '@chakra-ui/react'
+import {  Box, Button, FormControl, FormLabel, Input } from '@chakra-ui/react'
 import { AppContext } from '../ContextApp/AppContextProvider';
 import { useNavigate } from 'react-router-dom';
 

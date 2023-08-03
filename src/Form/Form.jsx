@@ -1,28 +1,30 @@
 
-import { Box, Button } from '@chakra-ui/react'
-import React, { useContext, useEffect, useState } from 'react'
+import { Box, Button, FormLabel } from '@chakra-ui/react'
+import React, { useContext, useState } from 'react'
 import FormControle from './FormControle'
 import RadioOption from './RadioOption'
 import { AppContext } from '../ContextApp/AppContextProvider'
+import UploadImg from '../UploadImages/UploadImg'
+import DriveUpload from './DriveUpload'
 
 const Form = () => {
 
-    const {AllUsers,setAllUsers} = useContext(AppContext)
-    
-    const [OrderData,setOrderData] = useState({}) ;
-    const handleInp = (e)=>{
-        setOrderData({...OrderData,[e.target.name]:e.target.value}) ;
+    const { AllUsers, setAllUsers } = useContext(AppContext)
+
+    const [OrderData, setOrderData] = useState({});
+    const handleInp = (e) => {
+        setOrderData({ ...OrderData, [e.target.name]: e.target.value });
     }
 
-    const handleSubmit = ()=>{
-        setAllUsers([OrderData,...AllUsers])
-        fetch(`https://carver-data-base.onrender.com/AllUsers`,{
-            method:"POST",
-            headers:{
-                "Content-Type":"application/json",
+    const handleSubmit = () => {
+        setAllUsers([OrderData, ...AllUsers])
+        fetch(`https://carver-data-base.onrender.com/AllUsers`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
             },
-            body:JSON.stringify(OrderData) 
-        }).then(()=>console.log(OrderData)) ;
+            body: JSON.stringify(OrderData)
+        }).then(() => console.log(OrderData));
     }
 
     const form = [
@@ -57,32 +59,40 @@ const Form = () => {
 
         { label: "Other details (R.S.V.P etc.)", type: "text", placeholder: "Other_details" },
 
-        { label: "Groom Individual Image", type: "file", placeholder: "Add_file" },
-        { label: "Bride Individual image", type: "file", placeholder: "Add_file" },
-        { label: "Couple image 1", type: "file", placeholder: "Add_file" },
-        { label: "Couple image 2", type: "file", placeholder: "Add_file" },
-        { label: "Couple image 3", type: "file", placeholder: "Add_file" },
-        { label: "Couple image 4", type: "file", placeholder: "Add_file" },
+        // { label: "Groom Individual Image", type: "file", placeholder: "Add_file" },
+        // { label: "Bride Individual image", type: "file", placeholder: "Add_file" },
+        // { label: "Couple image 1", type: "file", placeholder: "Add_file" },
+        // { label: "Couple image 2", type: "file", placeholder: "Add_file" },
+        // { label: "Couple image 3", type: "file", placeholder: "Add_file" },
+        // { label: "Couple image 4", type: "file", placeholder: "Add_file" },
     ]
-  return (
-    <Box>
-    {
-        form.map((ele, i) => {
-            if (ele.type != "Radio") {
-                return <FormControle key={i} input={ele.input} label={ele.label} type={ele.type} placeholder={ele.placeholder} handleInp={handleInp} />
+    return (
+        <Box>
+            {
+                form.map((ele, i) => {
+                    if (ele.type != "Radio") {
+                        return <FormControle key={i} input={ele.input} label={ele.label} type={ele.type} placeholder={ele.placeholder} handleInp={handleInp} />
+                    }
+                    else {
+                        return <RadioOption key={i} label={ele.label} number={ele.number} handleInp={handleInp} />
+                    }
+                })
             }
-            else {
-                return <RadioOption key={i} label={ele.label} number={ele.number} handleInp={handleInp} />
-            }
-        })
-    }
-    <Box m={'auto'} bg={'yellow'} w={'fit-content'}>
-        <Button onClick={handleSubmit} p={4} color='white' fontWeight='bold' borderRadius='md' bgGradient='linear(to-r, teal.500, green.500)' _hover={{ bgGradient: 'linear(to-r, red.500, yellow.500)', }}>
-            Submit
-        </Button>
-    </Box>
-    </Box>
-  )
+            <Box p={5} mb={5} bg={'white'}>
+                <FormLabel>Upload Image</FormLabel>
+                <UploadImg/>
+            </Box>
+            <Box p={5} mb={5} bg={'white'}>
+                <FormLabel>Upload Image</FormLabel>
+                <DriveUpload/>
+            </Box>
+            <Box m={'auto'} bg={'yellow'} w={'fit-content'}>
+                <Button onClick={handleSubmit} p={4} color='white' fontWeight='bold' borderRadius='md' bgGradient='linear(to-r, teal.500, green.500)' _hover={{ bgGradient: 'linear(to-r, red.500, yellow.500)', }}>
+                    Submit
+                </Button>
+            </Box>
+        </Box>
+    )
 }
 
 export default Form
